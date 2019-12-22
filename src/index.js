@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Scoreboard from './Scoreboard';
+import Scoreboard from './containers/Scoreboard';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Scoreboard />, document.getElementById('root'));

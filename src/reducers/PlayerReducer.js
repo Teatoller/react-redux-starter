@@ -27,11 +27,8 @@ export default function PlayerReducer(state = initialState, action) {
       ];
     case PlayerActionTypes.REMOVE_PLAYER:
       return [
-        ...state,
-        {
-          ...state.slice(0, action.index),
-          ...state.slice(action.index + 1)
-        }
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1)
       ];
     case PlayerActionTypes.UPDATE_PLAYER_SCORE:
       return state.map((player, index) => {

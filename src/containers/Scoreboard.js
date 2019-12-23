@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import Player from "../components/Player";
 import Header from "../components/Header";
 import AddPlayerForm from "../components/AddPlayerForm";
@@ -61,4 +63,9 @@ class Scoreboard extends Component {
     );
   }
 }
-export default Scoreboard;
+
+const mapStateToProps = state => ({
+  players: state
+});
+
+export default connect(mapStateToProps)(Scoreboard);

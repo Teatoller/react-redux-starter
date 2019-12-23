@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import Player from "../components/Player";
@@ -7,36 +8,8 @@ import AddPlayerForm from "../components/AddPlayerForm";
 import "../App.css";
 
 class Scoreboard extends Component {
-  state = {
-    players: [
-      {
-        name: "Jim Hoskins",
-        score: 31
-      },
-      {
-        name: "Andrew Chalkley",
-        score: 20
-      },
-      {
-        name: "Alena Holligan",
-        score: 50
-      }
-    ]
-  };
-
-  onScoreChange = (index, delta) => {
-    this.state.players[index].score += delta;
-    this.setState(this.state);
-  };
-
-  onAddPlayer = name => {
-    this.state.players.push({ name: name, score: 0 });
-    this.setState(this.state);
-  };
-
-  onRemovePlayer = index => {
-    this.state.players.splice(index, 1);
-    this.setState(this.state);
+  static propTypes = {
+    players: PropTypes.array.isRequired
   };
 
   render() {
